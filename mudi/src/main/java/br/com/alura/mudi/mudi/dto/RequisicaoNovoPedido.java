@@ -3,6 +3,7 @@ package br.com.alura.mudi.mudi.dto;
 import javax.validation.constraints.NotBlank;
 
 import br.com.alura.mudi.mudi.model.Pedido;
+import br.com.alura.mudi.mudi.model.StatusPedido;
 
 public class RequisicaoNovoPedido {
 	@NotBlank
@@ -12,6 +13,8 @@ public class RequisicaoNovoPedido {
 	@NotBlank
 	private String urlImagem;
 	private String descricao;
+	
+	private StatusPedido status;
 	
 	
 	
@@ -24,6 +27,7 @@ public class RequisicaoNovoPedido {
 	public String getUrlProduto() {
 		return urlProduto;
 	}
+	
 	public void setUrlProduto(String urlProduto) {
 		this.urlProduto = urlProduto;
 	}
@@ -45,6 +49,7 @@ public class RequisicaoNovoPedido {
 		pedido.setUrlProduto(urlProduto);
 		pedido.setUrlImagem(urlImagem);
 		pedido.setDescricao(descricao);
+		pedido.setStatus(StatusPedido.AGUARDANDO);
 		return pedido;
 	}
 	
